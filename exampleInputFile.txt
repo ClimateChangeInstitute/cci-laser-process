@@ -1,0 +1,13 @@
+# Use this file as a template for input to laserProcess.py
+#
+# Commented lines start with a # sign.
+#
+# FileName	LaserTime	StartDepth	EndDepth	WashinTime	WashoutTime
+Laser072015/1.TXT	955	0	4	12	23
+Laser072015/3.TXT	955	4.01	8	12	23
+Laser072015/5.TXT	955	8.01	12	12	23
+Laser072015/7.TXT	955	12.01	16	12	23
+Laser072015/9.TXT	955	16.01	20	12	23
+Laser072015/11.TXT	955	20.01	24	12	23
+Laser072015/13.TXT	955	24.01	28	12	23
+Laser072015/15[1].TXT	278	28.01	28.9	12	23
