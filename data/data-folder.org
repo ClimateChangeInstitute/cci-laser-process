@@ -1,0 +1,5 @@
+* The data folder
+
+Data that will be processed should be placed in this directory.  The
+contents of this directory will be ignored, and it will not be added
+to the git index.
