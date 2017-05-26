@@ -3,3 +3,9 @@
 Data that will be processed should be placed in this directory.  The
 contents of this directory will be ignored, and it will not be added
 to the git index.
+
+* Questions
+
+If you are unsure of how to use this directory, or for some reason you
+are having problems with files in this directory, please ask [[mailto:mark.royer@maine.edu][Mark
+Royer]].

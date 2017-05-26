@@ -1,4 +1,9 @@
 README.html
+# Ignore the contents of the data directory
+data/
+# But don't ignore the descriptive file!
+!data/data-folder.org
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
