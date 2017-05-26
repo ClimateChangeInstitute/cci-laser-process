@@ -227,15 +227,16 @@ def processFiles(inputFileName, outputFileName):
     
     allRows = combine(files)
 
+    # TODO need to finish processing this
     # Setup depth and age data variables    
-    matrix = readDepthToAgeFile("DepthtoAge.csv")
-    DepthWEqM = matrix[0]
-    Age = matrix[1]
-    DepthAbsCM = matrix[2]
+#     matrix = readDepthToAgeFile("DepthtoAge.csv")
+#     DepthWEqM = matrix[0]
+#     Age = matrix[1]
+#     DepthAbsCM = matrix[2]
 
-    # TODO need to finish processing this 
-    for i in range(len(allRows)) :
-        loc = findIndex(0, allRows, DepthAbsCM)
+ 
+    # for i in range(len(allRows)) :
+    #    loc = findIndex(0, allRows, DepthAbsCM)
 
 
     
