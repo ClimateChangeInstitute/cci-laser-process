@@ -6,7 +6,30 @@ from fileinput import filename
 
 
 class LaserFile:
+    '''
+    A loaded laser file with meta information and data contained in rows.
+    '''
     def __init__(self, fileName, laserTime, startDepth, endDepth, washinTime, washoutTime, header, rows):
+        '''
+        A new laser file for processing.
+        
+        @param fileName: The name of this laser file
+        @type fileName: str
+        @param laserTime: The total laser time?
+        @type laserTime: float
+        @param startDepth: Typically 0
+        @type startDepth: float
+        @param endDepth: >= startDepth
+        @type endDepth: float
+        @param washinTime: >= 0
+        @type washinTime: float
+        @param washoutTime: >= washinTime
+        @type washoutTime: float
+        @param header: list of strings. The columns headers header[0] is always 'Time' 
+        @type header: list
+        @param rows: The data in the laser file.  A list of lists.
+        @type rows: list
+        '''
         self.fileName = fileName
         self.laserTime = laserTime
         self.startDepth = startDepth
@@ -15,9 +38,12 @@ class LaserFile:
         self.washoutTime = washoutTime
         self.header = header 
         self.rows = rows
-        self.baseLineAve = [0, 0, 0, 0, 0, 0]  # No average recorded
+        self.baseLineAve = [0, 0, 0, 0, 0, 0]  # No baseline average recorded
 
     def __str__(self):
+        '''
+        @return: 
+        '''
         return self.fileName
     
     def __repr__(self):
@@ -29,12 +55,15 @@ def readFile(fileName, laserTime, startDepth, endDepth, washinTime, washoutTime)
     
     linNumber = 1
     for line in open(fileName):
-            if linNumber > 6 : 
+        
+            if linNumber > 6 :  # Data is only after the first six lines
                 rows.append(line.split())
-            elif linNumber == 1:
+            elif linNumber == 1:  # Header info is the first line of the file
                 header = line.split("\t")
+                # The first column is time, but is not listed in the file
                 header[0] = "Time"
-                for i in range(1, len(header)):
+                # The rest of the items are the column names
+                for i in range(1, len(header)): 
                     header[i] = re.sub("\(.*\)", "", header[i]).strip()
             
             linNumber += 1
@@ -179,7 +208,7 @@ def findIndex(col, allRows, DepthAbsCM) :
         if allRows[row][col] < DepthAbsCM[row] :
             return row
         
-    return -1 # Not found; something is weird
+    return -1  # Not found; something is weird
     
 
 def processFiles(inputFileName, outputFileName):
