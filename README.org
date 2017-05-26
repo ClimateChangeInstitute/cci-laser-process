@@ -18,6 +18,21 @@ python --version 2>&1
 : Python 2.7.13
 
 
+** Usage
+
+   To run the program, supply the input file (which describes the
+   files to load), and specify the output file location.  This is
+   shown below.
+
+#+BEGIN_SRC sh
+laserProcess.py inputFileName outputFileName
+#+END_SRC
+
+   It's recommended that the input files are placed in the data
+   directory so they are not added to the git index.  It may be a good
+   idea to output to the data directory as well since any files in that
+   directory are disregarded by git.
+
 ** Contributors
 
    The following people have contributed to the scripts in this
